@@ -19,12 +19,13 @@ contract NewTask {
     struct Employee{
         string name;
         address empWallet;
-        uint empID;
+        string empID;
     }
 
 // Register Employee
     function registerEmployee(Employee memory emp) public{
         require(!isEmployeeRegistered[emp.empWallet],"Employee already registered");
+        emp.empID="000"+(Employee.length+1);
           employees.push(emp);
           isEmployeeRegistered[emp.empWallet]=true;
     }
