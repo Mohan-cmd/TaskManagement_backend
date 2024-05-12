@@ -50,7 +50,8 @@ describe("NewTask", function(){
         const registerEmployee = await newTask.employees(2);
         console.log('Registered Employee: '+registerEmployee);
         expect(registerEmployee.name).to.equal("Ram");
-
+        const emps=await newTask.getEmployees();
+        console.log('emps',emps)
     })
     it("Should create a manager", async function(){
         await newTask.CreateManager(manager1);
@@ -63,6 +64,7 @@ describe("NewTask", function(){
 
         const EmpManager = await newTask.teamsMappings(employee2);
         expect(EmpManager).to.equal(manager1);
+        
     })
    
     // it("should transfer tokens", async function () {
@@ -91,17 +93,17 @@ describe("NewTask", function(){
         // const mintTx = await taskToken.connect(owner).mint(owner.address, transferAmount); // Assuming your Token contract has a "mint" function
         // await mintTx.wait();
       
-        // Ensure correct target address
+        
         const targetAddress = newTask.target; // Replace with actual deployed address if needed
       
-        // 1. Approve the transfer:
+        // Approving the transfer
         const tx1 = await taskToken.connect(owner).approve(targetAddress, transferAmount);
         await tx1.wait();
       
         const ownerBalanceBefore = await taskToken.balanceOf(owner);
         console.log('OwnerBalanceBefore is :', ownerBalanceBefore);
       
-        // 2. Execute the transfer using NewTask contract:
+        // Executing the transfer using NewTask contract
         const tx = await newTask.connect(owner).transferTokens(owner, manager1, transferAmount);
         await tx.wait();
       
@@ -132,7 +134,7 @@ describe("NewTask", function(){
     it("Assign, Complete and Approve Task", async function(){
         transferAmount = 20000
         taskTokens =1200;
-        // 1. Approve the transfer:
+        //  Approving the transfer
         const targetAddress = newTask.target;
         const tx1 = await taskToken.connect(owner).approve(targetAddress, transferAmount);
         await tx1.wait();
@@ -140,12 +142,12 @@ describe("NewTask", function(){
         const ownerBalanceBefore = await taskToken.balanceOf(owner);
         console.log('OwnerBalanceBefore is :', ownerBalanceBefore);
         
-        // Create Manager;
+        // Create Manager
         await newTask.CreateManager(manager1);
         const verifyMgr = await newTask.isManager(manager1);
            console.log('Verification of manager: '+verifyMgr);
         expect(verifyMgr).to.equal(true);
-        // 2. Execute the transfer using NewTask contract:
+        //  Execute the transfer 
         const tx = await newTask.connect(owner).transferTokens(owner, manager1, transferAmount);
         await tx.wait();
       
@@ -192,7 +194,9 @@ describe("NewTask", function(){
         
        const employeeBalance = await taskToken.balanceOf(employee2);
        expect(employeeBalance).to.equal(taskTokens);
-
+       console.log('EmployeeBalance is: '+employeeBalance);
+    //    const emps=await newTask.getEmployees();
+    //     console.log('emps',emps)
     })
 
 })

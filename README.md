@@ -23,7 +23,13 @@ User1BalanceAfter: 50000000000000000000
 User2BalanceAfter :50000000000000000000
 
 
+deployed Token contract is : 0xd52f355F1591b17876Dd3C86fd3205ee7bDaD6b6
+deployed Task contract is : 0x9d6dC583d8492D51b637e8C915797494521cEaa9
 
+deployed Token contract is : 0xFb6685D8f902A6165b8AE637e2De8B49500649b6
+deployed Task contract is : 0xD2b261b47eF7b0B11a8B3ff4Dcf47c16bFE8ef5d
 
-deployed Token contract is : 0x452d9F58cd79496baa0876A2275f4Ff0C0239379
-deployed Task contract is : 0x6b9f0b1CD018dE9628d662CCb928e846BA0a0b12
+//CreateManager check employee registered , verify is admin doing transaction
+//CreateTeam verify emp and mgr registered before
+
+//npx hardhat run scripts/deployNew.js --network customendpoint 
