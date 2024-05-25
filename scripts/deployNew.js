@@ -12,8 +12,12 @@ async function main(){
     // const contractFactory = new ethers.contractFactory(abi,bytecode,deployer);
     // const contract = await contractFactory.deploy();
     //  console.log('Contract address is : '+contract.target);
+
+    const name = "TaskToken";
+    const symbol = "TTK";
+
      const Token = await ethers.getContractFactory("Token");
-     const token = await Token.deploy();
+     const token = await Token.deploy(name,symbol);
      console.log('deployed Token contract is : '+token.target);
 
     const Task = await ethers.getContractFactory("NewTask");
