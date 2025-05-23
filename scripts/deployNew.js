@@ -14,7 +14,7 @@ async function main(){
     //  console.log('Contract address is : '+contract.target);
 
     const name = "TaskToken";
-    const symbol = "TTK";
+    const symbol = "TTKK";
 
      const Token = await ethers.getContractFactory("Token");
      const token = await Token.deploy(name,symbol);

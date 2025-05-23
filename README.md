@@ -32,6 +32,12 @@ deployed Task contract is : 0xD2b261b47eF7b0B11a8B3ff4Dcf47c16bFE8ef5d
 deployed Token contract is : 0xA609bdF27DB2154f373Bc8f776eDe0131a3d7CC0
 deployed Task contract is : 0x0F55277b68eBFe02D1B57231597D0dcB0eEefC6E
 
+deployed Token contract is : 0x1f2c168b0Fd920856CdEce1Da803b00Ddfd6B91D
+deployed Task contract is : 0xf08cb4ccA966c55D27bfF43291b8e6152e3cf88c
+
+deployed Token contract is : 0x930c84eD3fCdEFa6bcAAFCf7e85151bB2Ed064db
+deployed Task contract is : 0x1Df46eCf63557349AB0F74b264Fa8B3A1d0d0a57
+
 //CreateManager check employee registered , verify is admin doing transaction
 //CreateTeam verify emp and mgr registered before
 

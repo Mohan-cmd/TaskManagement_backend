@@ -9,7 +9,7 @@ contract Token is ERC20 {
       uint256 public maxSupply;
       //uint256 private totalSupply_;
       uint256 private initialSupply;
-         constructor(string memory name_, string memory symbol_) ERC20("TASKTOK","TTK"){
+         constructor(string memory name_, string memory symbol_) ERC20("TASKTOK","TTKK"){
             //_mint(msg.sender,100000000 * 10 ** decimals());
             initialSupply=1000000 * 10 ** decimals();
             maxSupply= 10000000 * 10 ** decimals();
